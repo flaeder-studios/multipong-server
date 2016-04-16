@@ -1,33 +1,27 @@
-#
-# Nginx Dockerfile
-#
-# https://github.com/dockerfile/nginx
-#
+FROM debian:jessie
 
-# Pull base image.
-FROM dockerfile/ubuntu
+MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
 
-# Install Nginx.
-RUN \
-  add-apt-repository -y ppa:nginx/stable && \
-  apt-get update && \
-  apt-get install -y nginx && \
-  rm -rf /var/lib/apt/lists/* && \
-  echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
-  chown -R www-data:www-data /var/lib/nginx
+ENV NGINX_VERSION 1.9.14-1~jessie
 
-# Define mountable directories.
-VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
+RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62 \
+	&& echo "deb http://nginx.org/packages/mainline/debian/ jessie nginx" >> /etc/apt/sources.list \
+	&& apt-get update \
+	&& apt-get install --no-install-recommends --no-install-suggests -y \
+						ca-certificates \
+						nginx=${NGINX_VERSION} \
+						nginx-module-xslt \
+						nginx-module-geoip \
+						nginx-module-image-filter \
+						nginx-module-perl \
+						nginx-module-njs \
+						gettext-base \
+	&& rm -rf /var/lib/apt/lists/*
 
-# Copy config
-COPY server.conf /etc/nginx/nginx.conf
+# forward request and error logs to docker log collector
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
-# Define working directory.
-WORKDIR /etc/nginx
+EXPOSE 80 443
 
-# Define default command.
-CMD ["nginx"]
-
-# Expose ports.
-EXPOSE 80
-EXPOSE 443
+CMD ["nginx", "-g", "daemon off;"]
