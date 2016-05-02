@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="flaederGamesApp" ng-strict-di>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link href='https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded|Gruppo|Cinzel+Decorative|Poiret+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/libs/angular-ui-grid/ui-grid.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/site.css">
+</head>
+
+<body ng-controller="HomeController">
+    <header>
+        <a ng-click="openSetNameModal()"> {{ player.name }} </a>
+        <div class="page-header">
+            <h1 class="text-left"> Flaeder Games </h1>
+        </div>
+    </header>
+
+    <section>
+        <div ng-controller="AlertController">
+            <uib-alert dismiss-on-timeout="5000" ng-repeat="alert in alertService.alerts" type="{{alert.type}}" close="alertService.closeAlert($index)">{{alert.message}}</uib-alert>
+        </div>
+        <ng-view></ng-view>
+    </section>
+
+    <footer class="bottomleft">
+        <h6 id="copyright"> <span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> Flaeder Studios </h6>
+    </footer>
+
+    <script id="2d-vertex-shader" type="x-shader/x-vertex">
+        attribute vec2 aVertexPosition; 
+        uniform vec2 uTranslation; 
+        uniform vec2 uScale; 
+        uniform vec2 uClipspace;
+
+        void main() { 
+            gl_Position = vec4(uClipspace * (aVertexPosition * uScale + uTranslation), 0, 1);
+        }
+    </script>
+
+    <script id="2d-fragment-shader" type="x-shader/x-fragment">
+        uniform mediump vec4 uColor; void main() { gl_FragColor = uColor; }
+    </script>
+
+    <script type=" text/javascript " src="/assets/libs/jquery/dist/jquery.js"></script>
+    <script type=" text/javascript " src="/assets/libs/webgl/webgl-utils.js"></script>
+    <script type=" text/javascript " src="/assets/libs/angular/angular.js"></script>
+    <script type=" text/javascript " src="/assets/libs/angular-load/angular-load.js"></script>
+    <script type=" text/javascript " src="/assets/libs/angular-route/angular-route.js"></script>
+    <script type=" text/javascript " src="/assets/libs/angular-ui-grid/ui-grid.js"></script>
+    <script type=" text/javascript " src="/assets/libs/angular-ui-grid/ui-grid.js"></script>
+    <script type=" text/javascript " src="/assets/libs/angular-animate/angular-animate.js"></script>
+    <script type=" text/javascript " src="/assets/libs/angular-ui-bootstrap/ui-bootstrap-tpls-1.1.2.js"></script>
+
+    <script type=" text/javascript " src="/app/app.config.js"></script>
+    <script type=" text/javascript " src="/app/app.routing.js"></script>
+    <script type=" text/javascript " src="/app/shared/http-methods/httpmethod.service.js"></script>
+    <script type=" text/javascript " src="/app/shared/http-methods/url.service.js"></script>
+    <script type=" text/javascript " src="/app/shared/player/player.service.js"></script>
+    <script type=" text/javascript " src="/app/shared/register-modal/register-modal.controller.js"></script>
+    <script type=" text/javascript " src="/app/shared/set-name-modal/set-name-modal.controller.js"></script>
+    <script type=" text/javascript " src="/app/shared/create-game/create-game-modal.controller.js"></script>
+    <script type=" text/javascript " src="/app/shared/canvas/autoresize.directive.js"></script>
+    <script type=" text/javascript " src="/app/shared/canvas/fullscreen.directive.js"></script>
+    <script type=" text/javascript " src="/app/shared/alert/alert.service.js"></script>
+    <script type=" text/javascript " src="/app/shared/alert/alert.controller.js"></script>
+    <script type=" text/javascript " src="/app/components/home/home.controller.js"></script>
+    <script type=" text/javascript " src="/app/components/lobby/lobby.controller.js"></script>
+    <script type=" text/javascript " src="/app/components/lobby/lobby.service.js"></script>
+    <script type=" text/javascript " src="/app/components/game/game.controller.js"></script>
+    <script type=" text/javascript " src="/app/components/game/game.service.js"></script>
+    <script type=" text/javascript " src="/app/components/battlepong/battlepong.service.js"></script>
+    <script type=" text/javascript " src="/app/components/battlepong/battlepong.controller.js"></script>
+
+</body>
+
+</html>

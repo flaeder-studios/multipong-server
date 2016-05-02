@@ -1,0 +1,23 @@
+<!-- {{gameState | json}} -->
+<div class="gameContainer" ng-style="gameContainerStyle">
+    <canvas width=777 height=480 id="gameCanvas" auto-resize resize-fn="resize(width, height)">
+        Your browser doesn't appear to support the HTML5 <code>&lt;canvas&gt;</code> element.
+    </canvas>
+    <div id=gameInfo ng-style="gameInfoStyle">
+    	<div ng-hide="gameState.started">
+    		Waiting for players... <br> {{ player.currentGame.joinedPlayers.length + ' / ' + player.currentGame.maxPlayers }}
+    	</div>
+    	<div ng-show="gameState.counter > 0">
+    		Game starts in <br> {{ gameState.counter }}
+    	</div>
+    	<div ng-show="gameState.gameOver">
+    		{{ gameState.winner }} <br> won!
+    	</div>
+    </div>
+    <div id=scoreBoard>
+        <p ng-repeat="(name, data) in gameState.players" ng-style="data.style" > {{name}}: {{data.score | number}}  </p> <br />
+    </div>
+</div>
+<div id="gameControlBar">
+    <button class="btn btn-primary btn-lg" ng-click="quitGame()"> Quit </button>
+</div>

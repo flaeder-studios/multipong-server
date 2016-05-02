@@ -1,0 +1,257 @@
+body {}
+.grid {
+    height: 60vh;
+    width: 80vw;
+    margin: 10px;
+}
+.ui-grid {
+    border: 1px solid #308900;
+    box-sizing: content-box;
+    border-radius: 0px;
+    transform: translateZ(0px);
+}
+.ui-grid-top-panel {
+    background: #42bc00
+}
+.ui-grid-menu-button {
+    z-index: 2;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: #48d100 none repeat scroll 0% 0%;
+    border: 1px solid #308900;
+    cursor: pointer;
+    height: 31px;
+    font-weight: normal;
+}
+.ui-grid-header {
+    border-bottom: 1px solid #308900;
+    box-sizing: border-box;
+}
+.ui-grid-header-cell {
+    position: relative;
+    box-sizing: border-box;
+    background-color: inherit;
+    border-right: 1px solid #308900;
+    border-color: #308900;
+    display: table-cell;
+    width: 0px;
+}
+.ui-grid-row:nth-child(odd) .ui-grid-cell {
+    background-color: #d8ffc4;
+}
+.ui-grid-row:nth-child(even) .ui-grid-cell {
+    background-color: #efffe6;
+}
+.ui-grid-row:last-child .ui-grid-cell {
+    border-bottom-color: rgba( 48, 137, 0, 0.8);
+    border-bottom-style: solid;
+}
+.ui-grid-cell {
+    overflow: hidden;
+    float: left;
+    background-color: inherit;
+    border-right: 1px solid;
+    border-color: #9cc387;
+    box-sizing: border-box;
+}
+.ui-grid-cell:last-child {
+    border-right: 0;
+}
+.ui-grid-cell-contents {
+    padding: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 100%;
+}
+#gameGridControl, #gameControlBar {
+    margin: 10px;
+}
+.bottomleft {
+    position: absolute;
+    bottom: 8px;
+}
+.topleft {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+.page-header {
+    padding-bottom: 9px;
+    margin: 40px 0px 20px;
+    border-bottom: 1px solid #308900;
+}
+.btn {
+    font-weight: bold;
+    border-style: none;
+}
+
+/*active: #d16900 hover/focus: #ff860d idle: #ff9831 .btn-primary:focus,*/
+
+.btn-primary {
+    color: #fff;
+    background-color: #ff9831;
+}
+.btn-primary:focus,
+.btn-primary.focus {
+    color: #fff;
+    background-color: #ff860d;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #ff860d;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #d16900;
+}
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open > .dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary.focus {
+    color: #fff;
+    background-color: #d16900;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    background-image: none;
+    background-color: #d16900;
+}
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus {
+    background-color: #ff9831;
+}
+.btn-warning {
+    color: #FFF;
+    background-color: #ff5050;
+    border-top-color: #ff8100;
+    border-right-color: #fff8f1;
+    border-bottom-color: #fff8f1;
+    border-left-color: #ff8100;
+}
+.btn-warning:hover,
+.btn-warning:focus:hover {
+    color: #FFF;
+    background-color: #ff1c1c;
+    border-top-color: #ff8100;
+    border-right-color: #fff8f1;
+    border-bottom-color: #fff8f1;
+    border-left-color: #ff8100;
+}
+.btn-warning[disabled]:hover,
+.btn-warning[disabled]:focus,
+.btn-warning[disabled]:active {
+    color: #FFF;
+    background-color: #ff1c1c;
+    border-top-color: #ff8100;
+    border-right-color: #fff8f1;
+    border-bottom-color: #fff8f1;
+    border-left-color: #ff8100;
+    opacity: 0.4;
+}
+.modal-header {
+    background: #308900;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#308900, #9cc387);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#308900, #9cc387);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#308900, #9cc387);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#308900, #9cc387);
+    /* Standard syntax */
+    color: #ffffff;
+    border-bottom-color: #308900;
+}
+.btn-group {
+    vertical-align: middle;
+}
+canvas {
+    border: 1px solid #308900;
+    margin: 10px;
+}
+footer {
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #308900;
+    width: 100%;
+}
+header {
+    background: #308900;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#308900, #9cc387);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#308900, #9cc387);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#308900, #9cc387);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#308900, #9cc387);
+    /* Standard syntax */
+    color: #ffffff;
+}
+:-webkit-full-screen,
+:-moz-full-screen,
+:-ms-fullscreen,
+:full-screen,
+:fullscreen {
+    background: #ffffff;
+}
+h1 {
+    font-family: 'Cinzel Decorative', bold;
+    margin: 10px;
+}
+a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 10px;
+}
+a:link {
+    color: white;
+}
+a:hover {
+    color: white;
+}
+.gameContainer {
+    position: relative;
+}
+#scoreBoard {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+.alert {
+    position: fixed;
+    top: 5px;
+    left: 50%;
+    width: 750px;
+    margin-left: -375px;
+    z-index: 999;
+}
+.modal-alert {
+    color: red;
+    border-style: solid;
+    padding: 5px;
+}
+

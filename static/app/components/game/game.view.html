@@ -1,0 +1,13 @@
+
+<div ng-switch on="player.currentGame.name">
+    <div ng-switch-default>
+    Unknown game... sorry bro
+    <button class="btn btn-primary btn-lg" ng-click="backToLobby()" > Back To Lobby </button>
+    </div>
+    <div ng-switch-when="mpong">
+        <div ng-if="!player.currentGame.gameStarted"> Waiting for players ... ({{ player.currentGame.joinedPlayers.length + " / "  + player.currentGame.maxPlayers}})
+                <button class="btn btn-primary btn-lg" ng-click="startCurrentGame()" ng-class="{disabled:player.currentGame.joinedPlayers.length != player.currentGame.maxPlayers}" > Start Game! </button>
+                <button class="btn btn-primary btn-lg" ng-click="backToLobby()" > Back To Lobby </button>
+        </div>
+    </div>
+</div>

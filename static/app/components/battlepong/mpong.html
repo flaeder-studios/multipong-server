@@ -1,0 +1,26 @@
+<!-- Licensed under a BSD license. See license.html for license -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Multipong</title>
+    <link type="text/css" href="/assets/css/mpong.css" rel="stylesheet" />
+    <script id="2d-vertex-shader" type="x-shader/x-vertex">
+        attribute vec2 aVertexPosition; void main() { gl_Position = vec4(aVertexPosition, 0, 1); }
+    </script>
+    <script id="2d-fragment-shader" type="x-shader/x-fragment">
+        void main() { gl_FragColor = vec4(1.0, 0.0, 1.0, 1.0); }
+    </script>
+</head>
+
+<body>
+    <header>
+        <button class="btn btn-primary btn-lg" onclick="quitGame()"> Quit </button>
+    </header>
+    <canvas id="canvas" width="600" height="600"></canvas>
+    <script src="/assets/libs/webgl/webgl-utils.js"></script>
+    <script src="/app/components/mpong/mpong.js"></script>
+</body>
+
+</html>

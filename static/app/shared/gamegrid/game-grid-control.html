@@ -1,0 +1,7 @@
+<div class="btn-group">
+    <button class="btn btn-warning btn-xs" ng-disabled="row.entity.createdBy != grid.appScope.player.name" ng-click="grid.appScope.removeGame(row.entity)"> Delete </button>
+    <button class="btn btn-primary btn-xs" ng-show="row.entity.maxPlayers > row.entity.joinedPlayers.length" ng-click="grid.appScope.joinGame(row.entity)"> Join Game </button>
+    <button class="btn btn-primary btn-xs" ng-show="row.entity.maxPlayers == row.entity.joinedPlayers.length" ng-click="grid.appScope.viewGame(row.entity)"> View Game </button>
+<!--     <button class="btn btn-primary btn-xs" ng-disabled="grid.appScope.player.currentGame || row.entity.maxPlayers <= row.entity.joinedPlayers.length" ng-click="grid.appScope.joinGame(row.entity)"> Join </button>
+    <button class="btn btn-primary btn-xs" ng-disabled="!grid.appScope.player.currentGame || row.entity.id != grid.appScope.player.currentGame.id" ng-click="grid.appScope.leaveGame()"> Leave </button> -->
+</div>
