@@ -1,0 +1,27 @@
+api
+===
+
+lobby app
+---------
+all uris are of the form lobby.[URI] where URIs are listed below.
+URIs are implemented at proxy level and lobby indicates
+proxying to the lobby server.
+
+games GET/POST/DELETE
+games.method.join POST
+games.method.leave POST
+games.method.start POST
+
+players GET/POST/DELETE
+players.method.register POST
+players.method.unregister POST
+
+game app
+--------
+all uris are of the form game.gameId.[URI] where URIs are listed below.
+URIs are implemented at proxy level and gameId indicates
+proxying to the game server with corresponding id.
+
+method.state GET
+method.paddleSpeed POST
+method.quit POST

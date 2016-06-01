@@ -1,4 +1,4 @@
 #!/bin/bash
 
-chown -R nginx /usr/share/nginx/html
-nginx
+python /application/lobby-server/main.py
+nginx -g daemon off;
